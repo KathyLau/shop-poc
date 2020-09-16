@@ -3,4 +3,6 @@
 
 Working on ideas for open source project.
 
-1. a subscription based rideshare service
+1. locate and review food carts in nyc
+
+
