@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github.com/KathyLau/COMS4995t?style=plastic&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
+
 # Project Proposal
 
 ## Background and Purpose
