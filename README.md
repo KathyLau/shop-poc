@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/github.com/KathyLau/COMS4995t?style=plastic&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/static/v1?label=license&message=MIT&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
 
 # Project Proposal
 
