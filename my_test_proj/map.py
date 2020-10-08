@@ -13,6 +13,23 @@ def searchbar():
     else:
         print("Please enter a word")
         searchbar()
+
+def dist():
+    distvalue = input("Distance:\n")
+    if isinstance(distvalue, int)
+        return distvalue
+    else:
+        print("Please enter a number")
+        dist()
+        
+def borough():
+   bvalue = input("Search by Borough:\n")
+    if isinstance(bvalue, str)
+        return bvalue
+    else:
+        print("Please enter a word")
+        borough()
+    
 #defining a class for list objects?    
 class Biz:
   def __init__(self, name, location, description):
