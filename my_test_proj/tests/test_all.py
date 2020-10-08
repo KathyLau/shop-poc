@@ -1,6 +1,8 @@
 #import the method from project folder
 from my_test_proj import inc
 from my_test_proj import searchbar
+from my_test_proj import dist
+from my_test_proj import borough
 
 
 #this is a sample test from prof paine's project
@@ -26,12 +28,28 @@ def anydup(thelist):
   return print("Pass test 2")
     
 
-#test 3 - check if a list obj has missing info from specific fields
+#test 3 - check if a searched value for distance is an int
+def test_dist():
+    distvalue = isinstance(dist(), int)
+    if distvalue:
+        print("Pass test 1")
+    else
+        print("Fail test 1")
 
 
 #test 4 - check if list is empty
 def emptyList(thelist):
     if not a:
-        print("Fail test 3)
+        print("Fail test 3")
+    else:
+        print("Pass test 3")
 
-#test 5 - check if a list obj have wrong type for one of its attributes?
+#test 5 - check if searched value for borough is a string
+def test_borough():
+    b = isinstance(borough(), str)
+    if b:
+        print("Pass test 1")
+    else
+        print("Fail test 1")
+              
+            
