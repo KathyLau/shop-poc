@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/static/v1?label=license&message=MIT&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/KathyLau/shop-poc.png?branch=master)](https://travis-ci.org/KathyLau/shop-poc)
 
 # Project Proposal
 
