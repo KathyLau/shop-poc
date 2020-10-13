@@ -10,7 +10,7 @@ install:
 
 # command to run tests
 script:
-  - py.test -s --cov=tests/
+  - py.test -s --cov=shop-poc tests/
 #test
 
 after_success:
