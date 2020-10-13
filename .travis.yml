@@ -11,7 +11,7 @@ install:
 
 # command to run tests
 script:
-  - py.test -s --cov=my_test_proj/
+  - py.test -s --cov=tests/
 #test
 
 after_success:

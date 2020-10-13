@@ -7,28 +7,28 @@ def inc(x):
 
 #searchbar method that should only accept strings in search bar
 def searchbar():
-    searchvalue = input("Search:\n")
-    if isinstance(searchvalue, str)
+    searchvalue = "poke restaurant"
+    if isinstance(searchvalue, str):
         return searchvalue
     else:
         print("Please enter a word")
         searchbar()
 
 def dist():
-    distvalue = input("Distance:\n")
-    if isinstance(distvalue, int)
+    distvalue = 500
+    if isinstance(distvalue, int):
         return distvalue
     else:
         print("Please enter a number")
         dist()
         
 def borough():
-   bvalue = input("Search by Borough:\n")
-    if isinstance(bvalue, str)
-        return bvalue
-    else:
-        print("Please enter a word")
-        borough()
+	bvalue = "Brooklyn"
+	if isinstance(bvalue, str):
+		return bvalue
+	else:
+		print("Please enter a word")
+		borough()
     
 #defining a class for list objects?    
 class Biz:

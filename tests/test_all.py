@@ -1,8 +1,8 @@
 #import the method from project folder
-from my_test_proj import inc
-from my_test_proj import searchbar
-from my_test_proj import dist
-from my_test_proj import borough
+from .map import inc
+from .map import searchbar
+from .map import dist
+from .map import borough
 
 
 #this is a sample test from prof paine's project
@@ -16,7 +16,7 @@ def test_searchbar():
     searchedvalue = isinstance(searchbar(), str)
     if searchedvalue:
         print("Pass test 1")
-    else
+    else:
         print("Fail test 1")
 
 #test 2 - check if any duplicates in list of shops
@@ -33,7 +33,7 @@ def test_dist():
     distvalue = isinstance(dist(), int)
     if distvalue:
         print("Pass test 1")
-    else
+    else:
         print("Fail test 1")
 
 
@@ -49,7 +49,7 @@ def test_borough():
     b = isinstance(borough(), str)
     if b:
         print("Pass test 1")
-    else
+    else:
         print("Fail test 1")
               
             
