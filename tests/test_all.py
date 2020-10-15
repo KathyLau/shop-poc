@@ -3,6 +3,7 @@ from .map import inc
 from .map import searchbar
 from .map import dist
 from .map import borough
+from .map import Biz
 
 
 #this is a sample test from prof paine's project
