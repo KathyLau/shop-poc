@@ -21,7 +21,7 @@ def dist():
     else:
         print("Please enter a number")
         dist()
-        
+
 def borough():
 	bvalue = "Brooklyn"
 	if isinstance(bvalue, str):
@@ -29,8 +29,8 @@ def borough():
 	else:
 		print("Please enter a word")
 		borough()
-    
-#defining a class for list objects?    
+
+#defining a class for list objects?
 class Biz:
   def __init__(self, name, location, description):
     self.name = name
