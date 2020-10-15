@@ -8,7 +8,7 @@ from .map import borough
 #this is a sample test from prof paine's project
 def test_inc():
     assert inc(1) == 2, "did not pass test_inc"
-    
+
 #below are some possible test ideas to use on ""code"" in map.py
 
 #test 1 - checks if a string is taken in from the searchbar - should always end up being a string
@@ -26,7 +26,7 @@ def anydup(thelist):
     if x in seen: print("Fail test 2")
     seen.add(x)
   return print("Pass test 2")
-    
+
 
 #test 3 - check if a searched value for distance is an int
 def test_dist():
@@ -39,7 +39,7 @@ def test_dist():
 
 #test 4 - check if list is empty
 def emptyList(thelist):
-    if not a:
+    if not thelist:
         print("Fail test 3")
     else:
         print("Pass test 3")
@@ -51,5 +51,44 @@ def test_borough():
         print("Pass test 1")
     else:
         print("Fail test 1")
-              
-            
+
+#test 6 - check the actual value of the searchbar
+def test2_searchbar():
+    searchedvalue = searchbar()
+    if searchedvalue == "poke restaurant":
+        print("Pass test 6")
+    else:
+        print("Fail test 6")
+
+#test 7 - check the actual distance of the search
+def test_dist():
+    distvalue = dist()
+    if distvalue == 500:
+        print("Pass test 7")
+    else:
+        print("Fail test 7")
+
+#test 8 - check if the borough actually matches
+def test_borough():
+    b = borough()
+    if b == "Brooklyn":
+        print("Pass test 8")
+    else:
+        print("Fail test 8")
+
+#test 9 - test Biz class creation
+def test_Bizclass():
+    p1 = Biz("Westside", "Morningside Heights", "Grocery store")
+    if isinstance(p1, Biz):
+        print("Pass test 9")
+    else:
+        print("Fail test 9")
+
+#test 10 - test Biz class comparison
+def test_Bizes():
+    p1 = Biz("Westside", "Morningside Heights", "Grocery store")
+    p2 = Biz("Up", "Morningside Heights", "Coffee shop")
+    if p1.location == p2.location:
+        print("Pass test 10")
+    else:
+        print("Fail test 10")
