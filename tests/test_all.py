@@ -55,27 +55,17 @@ def test_borough():
 
 #test 6 - check the actual value of the searchbar
 def test2_searchbar():
-    searchedvalue = searchbar()
-    if searchedvalue == "poke restaurant":
-        print("Pass test 6")
-    else:
-        print("Fail test 6")
+    assert searchbar() == "poke restaurant"
 
 #test 7 - check the actual distance of the search
 def test_dist():
-    distvalue = dist()
-    if distvalue == 500:
-        print("Pass test 7")
-    else:
-        print("Fail test 7")
+    assert dist()== 500
+
 
 #test 8 - check if the borough actually matches
 def test_borough():
-    b = borough()
-    if b == "Brooklyn":
-        print("Pass test 8")
-    else:
-        print("Fail test 8")
+    assert borough() == "Brooklyn"
+       
 
 #test 9 - test Biz class creation
 def test_Bizclass():
@@ -89,7 +79,6 @@ def test_Bizclass():
 def test_Bizes():
     p1 = Biz("Westside", "Morningside Heights", "Grocery store")
     p2 = Biz("Up", "Morningside Heights", "Coffee shop")
-    if p1.location == p2.location:
-        print("Pass test 10")
-    else:
-        print("Fail test 10")
+    assert p1.location == p2.location
+
+test_Bizes()
