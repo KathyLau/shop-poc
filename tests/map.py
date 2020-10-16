@@ -1,6 +1,3 @@
-#some temporary code for our project!
-import numpy
-
 #example code from prof paine
 def inc(x):
     return x + 1
