@@ -7,12 +7,12 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install pytest-cov
-  - python -m pip install pylint
+  - python -m pip install flake8
 
 # command to run tests
 script:
   #- flake8 --version
-  - pylint tests/
+  - pytest flake8 tests/
   - py.test --cov-report=xml --cov=tests/
 #test
 
