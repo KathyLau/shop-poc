@@ -12,7 +12,7 @@ install:
 # command to run tests
 script:
   #- flake8 --version
-  - pytest --flake8 tests/
+  - python flake8 tests/
   - py.test --cov-report=xml --cov=tests/
 #test
 
