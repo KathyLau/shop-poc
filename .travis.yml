@@ -7,11 +7,11 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install pytest-cov
-  - pip install flake8
+  - pip install -m flake8
 
 # command to run tests
 script:
-  - COPY./flake8 tests/
+  - python -m flake8 tests/
   - py.test --cov-report=xml --cov=tests/
 #test
 
