@@ -11,6 +11,7 @@ install:
 
 # command to run tests
 script:
+  - python -m flake8 tests/
   - py.test --cov-report=xml --cov=tests/
 #test
 
