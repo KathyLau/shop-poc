@@ -11,7 +11,7 @@ install:
 # command to run tests
 script:
   - py.test --cov-report=xml --cov=tests/
-  - "pytest --flake8"
+  - pytest --flake8
 
 #test
 
