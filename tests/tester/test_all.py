@@ -1,9 +1,9 @@
 #import the method from project folder
-from .map import inc
-from .map import searchbar
-from .map import dist
-from .map import borough
-from .map import Biz
+from tests import inc
+from tests import searchbar
+from tests import dist
+from tests import borough
+from tests import Biz
 
 
 #this is a sample test from prof paine's project
