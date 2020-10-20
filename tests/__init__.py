@@ -1,4 +1,4 @@
-from .map import inc
-from .map import searchbar
-from .map import dist
-from .map import borough
+from .map import inc # noqa: F401
+from .map import searchbar # noqa: F401
+from .map import dist # noqa: F401
+from .map import borough # noqa: F401
