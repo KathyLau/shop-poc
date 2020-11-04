@@ -9,6 +9,10 @@
 ## What is it?
 In light of recent protests and the increased participation in the Black Lives Matter Movement, Shop-POC is a response in the form of an interactive map of small, black-owned and POC-owned businesses in New York City which aims to allow users to easily find ways to shop small and support POC businesses near them.
 
+```eval_rst
+..note::
+	We can still mix rst
+```
 # User Documentation
 ## Getting Started
 
