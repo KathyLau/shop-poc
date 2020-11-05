@@ -2,10 +2,8 @@
 [![License: MIT](https://img.shields.io/static/v1?label=license&message=MIT&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/KathyLau/shop-poc.png?branch=master)](https://travis-ci.org/KathyLau/shop-poc)
 [![codecov](https://codecov.io/gh/KathyLau/shop-poc/branch/master/graph/badge.svg)](https://codecov.io/gh/KathyLau/shop-poc)
+[![Documentation Status](https://readthedocs.org/projects/shop-poc/badge/?version=latest)](https://shop-poc.readthedocs.io/en/latest/?badge=latest)
 
-- need to add a read the docs badge?
-
-## What is it?
 In light of recent protests and the increased participation in the Black Lives Matter Movement, Shop-POC is a response in the form of an interactive map of small, black-owned and POC-owned businesses in New York City which aims to allow users to easily find ways to shop small and support POC businesses near them.
 
 ## Key features
@@ -46,3 +44,11 @@ Currently, Shop-POC has created a GitHub repository, added testing files, set up
 - Next release will include the integration of the Google Maps API
 # API Documentation
 - Shop-POC uses the Google Maps API. Further API documentation can be found here
+
+
+```eval_rst
+.. toctree::
+   :hidden:
+
+   modules
+```
