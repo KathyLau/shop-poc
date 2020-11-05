@@ -1,12 +1,19 @@
 # example code from prof paine
 def inc(x):
+    """ Function that increments given integer by 1.
+
+    Parameters
+    ----------
+    x : int
+        The given integer.
+    """
+
     return x + 1
 
 
 # searchbar method that should only accept strings in search bar
 def searchbar():
     """ Ensures seach bar only accepts strings
-    :return: (str) searched word or prompt
     """
     searchvalue = "poke restaurant"
     if isinstance(searchvalue, str):
@@ -16,6 +23,8 @@ def searchbar():
 
 
 def dist():
+    """ Ensures distance value is an integer
+    """
     distvalue = 500
     if isinstance(distvalue, int):
         return distvalue
@@ -24,6 +33,8 @@ def dist():
 
 
 def borough():
+    """ Ensures the borough entered is a string
+    """
     bvalue = "Brooklyn"
     if isinstance(bvalue, str):
         return bvalue
@@ -33,6 +44,18 @@ def borough():
 
 # defining a class for list objects?
 class Biz:
+    """ Class that represents a buisness object
+
+    Parameters
+    ----------
+    name : str
+        The name of the buisiness
+    location : str
+        The borough where the buisiness is located
+    description : str
+        A description of the buisiness
+    """
+
     def __init__(self, name, location, description):
         self.name = name
         self.location = location

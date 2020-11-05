@@ -8,25 +8,40 @@ from .map import Biz
 
 # this is a sample test from prof paine's project
 def test_inc():
+    """ Tests the increment function
+    """
+
     assert inc(1) == 2, "did not pass test_inc"
+
 
 # below are some possible test ideas to use on ""code"" in map.py
 
 # test 1 - checks if a string is taken in from the searchbar - should
 # always end up being a string
 
-
 def test_searchbar():
+    """ Tests the search bar method
+    """
+
     searchedvalue = isinstance(searchbar(), str)
     if searchedvalue:
         print("Pass test 1")
     else:
         print("Fail test 1")
 
+
 # test 2 - check if any duplicates in list of shops
 
 
 def anydup(thelist):
+    """ Checks if there are any duplicates in the list of buisnesses
+
+    Parameters
+    ----------
+    thelist : List
+        List of Biz objects
+    """
+
     seen = set()
     for x in thelist:
         if x in seen:
@@ -37,6 +52,9 @@ def anydup(thelist):
 
 # test 3 - check if a searched value for distance is an int
 def test_dist():
+    """ Tests if function to ensure distance is an integer works
+    """
+
     distvalue = isinstance(dist(), int)
     if distvalue:
         print("Pass test 1")
@@ -46,6 +64,14 @@ def test_dist():
 
 # test 4 - check if list is empty
 def emptyList(thelist):
+    """ Checks if list is empty
+
+    Parameters
+    ----------
+    thelist : List
+        List of Biz objects
+    """
+
     if not thelist:
         print("Fail test 3")
     else:
@@ -55,16 +81,21 @@ def emptyList(thelist):
 
 
 def test_borough():
+    """ Tests if function to ensure borough is a string is working
+    """
+
     b = isinstance(borough(), str)
     if b:
         print("Pass test 1")
     else:
         print("Fail test 1")
 
+
 # test 6 - check the actual value of the searchbar
 
 
 def test2_searchbar():
+
     assert searchbar() == "poke restaurant"
 
 # test 7 - check the actual distance of the search
