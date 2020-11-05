@@ -16,5 +16,8 @@ Users of the application can give names to unnamed small businesses (not named o
 ## Tags and photos
 Users will be able to give certain tags and attribute certain photos and comments to the businesses
 
+## Read our documentation
+https://shop-poc.readthedocs.io/en/latest/
+
 ## Team Members
 Kathy Lau and Doria Chen
