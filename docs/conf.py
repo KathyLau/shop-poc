@@ -10,12 +10,13 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
 import sphinx_rtd_theme
 
 from recommonmark.transform import AutoStructify
+
+sys.path.insert(0, os.path.abspath('../python'))
 # -- Project information -----------------------------------------------------
 
 project = 'shop-poc'
@@ -23,7 +24,7 @@ copyright = '2020, Doria Chen and Kathy Lau'
 author = 'Doria Chen and Kathy Lau'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,7 +32,7 @@ release = '0.0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark']
+extensions = ['recommonmark', 'sphinx.ext.autodoc']
 source_suffix = ['.rst', '.md']
 
 # Add any paths that contain templates here, relative to this directory.
