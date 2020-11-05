@@ -16,7 +16,7 @@ import sphinx_rtd_theme
 
 from recommonmark.transform import AutoStructify
 
-sys.path.insert(0, os.path.abspath('../python'))
+sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'shop-poc'
@@ -32,7 +32,7 @@ release = '1.0.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark', 'sphinx.ext.autodoc']
+extensions = ['recommonmark', 'sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 source_suffix = ['.rst', '.md']
 
 # Add any paths that contain templates here, relative to this directory.

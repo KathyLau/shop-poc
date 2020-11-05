@@ -5,6 +5,9 @@ def inc(x):
 
 # searchbar method that should only accept strings in search bar
 def searchbar():
+    """ Ensures seach bar only accepts strings
+    :return: (str) searched word or prompt
+    """
     searchvalue = "poke restaurant"
     if isinstance(searchvalue, str):
         return searchvalue
