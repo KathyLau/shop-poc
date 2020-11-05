@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/static/v1?label=license&message=MIT&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/KathyLau/shop-poc.png?branch=master)](https://travis-ci.org/KathyLau/shop-poc)
 [![codecov](https://codecov.io/gh/KathyLau/shop-poc/branch/master/graph/badge.svg)](https://codecov.io/gh/KathyLau/shop-poc)
+[![Documentation Status](https://readthedocs.org/projects/shop-poc/badge/?version=latest)](https://shop-poc.readthedocs.io/en/latest/?badge=latest)
 
 # Project Proposal
 
@@ -15,9 +16,6 @@ Users of the application can give names to unnamed small businesses (not named o
 
 ## Tags and photos
 Users will be able to give certain tags and attribute certain photos and comments to the businesses
-
-## Read our documentation
-https://shop-poc.readthedocs.io/en/latest/
 
 ## Team Members
 Kathy Lau and Doria Chen
