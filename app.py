@@ -14,7 +14,7 @@ def home():
 
 
 # to register a business
-@app.route('/register', methods=['GET','POST'])
+@ app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
         return render_template('register.html')
@@ -30,7 +30,7 @@ def register():
         insta = request.form['insta']
         cuisine = request.form['cuisine']
 
-        #code to insert into database
+        # code to insert into database
     return redirect(url_for('home'))
 
 
