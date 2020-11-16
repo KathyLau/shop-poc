@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, url_for
 app = Flask(__name__)
 
 
-@app.route('/, methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         return render_template('index.html', API_KEY="api-key")
