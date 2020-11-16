@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
 
@@ -17,6 +17,7 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     elif request.method == 'POST':
+        '''
         bname = request.form['bname']
         email = request.form['email']
         oname = request.form['oname']
@@ -27,9 +28,8 @@ def register():
         site = request.form['site']
         insta = request.form['insta']
         cuisine = request.form['cuisine']
-
-        # code to insert into database
-    return redirect(url_for('home'))
+        '''
+        return redirect(url_for('home'))
 
 
 if __name__ == '__main__':
