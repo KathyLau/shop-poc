@@ -12,7 +12,7 @@ class ShopModel(Model):
 
 class Shop(Collection):
 
-    def__init__(self):
+    def __init__(self):
         super(Shop, self).__init__(ShopModel)
 
     def insert(self, **kwargs):
