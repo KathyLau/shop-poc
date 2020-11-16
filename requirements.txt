@@ -19,3 +19,6 @@ codecov==2.1.10
 
 # For Linting
 pytest-flake8==1.0.6
+
+# For Pymongo
+pymongo==3.3.0
