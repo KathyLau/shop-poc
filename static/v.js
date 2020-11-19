@@ -6,6 +6,7 @@ function clearDisplay(){
 	$("#image").empty();
 	$("#text").empty();
 	$("#list").empty();
+	$("#type").empty();
 }
 
 function display(returnlist){
@@ -18,6 +19,7 @@ function display(returnlist){
 	var location = $("<div>");
 	var rating = $("<div>");
 	var text = $("<div>");
+	var type = $("<div>");
 	var image = $("<img src="+returnlist[0]["image"]+">")
 	$(image).addClass("img-fluid")
 	var alt_text = returnlist[0]["name"]+" taco";
@@ -37,6 +39,9 @@ function display(returnlist){
 
 	$(text).text(returnlist[0]["text"]);
 	$("#text").append(text)
+
+	$(type).text("Type of Business: "+returnlist[0]["type"]);
+	$("#type").append(type)
 
 	$("#image").append(image);
 	console.log("flag 1");
