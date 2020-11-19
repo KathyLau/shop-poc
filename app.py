@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify
+from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 searchterm = "Search Results"
