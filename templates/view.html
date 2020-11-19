@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'v.js') }}"></script>
+
+	<script type="text/javascript">
+
+		var returnlist = {{returnlist|tojson}}
+	</script>
+
+
+	<style>
+		.outline{
+			border: 1px solid black;
+		}
+		.inine{
+			display: inline-block;
+		}
+		#name{
+			font-size: 25px;
+			padding: 20px;
+			justify-content: center;
+			background-color: whitesmoke;
+			margin-top: 20px;
+		}
+		.pad{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.input-res
+		{
+			width: 100%;
+		    max-width: 500px;
+		    box-sizing: border-box;
+		 }
+		 .outline{
+		 	border: 1px solid black;
+		 }
+		 .btn {
+		 	background-color: dodgerblue;
+			border: none;
+			margin-left: 1px;
+			margin-right: 1px;
+			margin-bottom: 3px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: RoyalBlue;
+		}
+		.red{
+			background-color: red;
+		}
+		.del{
+			color: red;
+			font-size: 13px;
+		}
+		.del:hover{
+			background-color: grey;
+			cursor: pointer;
+		}
+		.little_pad{
+			margin: 5px;
+		}
+		.top_pad{
+			padding-top: 5px;
+		}
+
+	</style>
+
+	<div class="row" id="name">
+			#name
+		</div>
+		<div class="row bold">
+			<div class="col-md-4 pad" id="location">
+				
+			</div>
+			<div class="col-md-4 pad" id="type">
+		
+			</div>
+			<div class="col-md-4 pad" id="rating">
+				
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-6" id="image">
+				
+			</div>
+			<div class="col-md-6" id="textbox">
+				<div class="row bold">
+					Description:
+				</div>
+				<div class="row" id="text">
+					
+				</div>
+				<div class="row bold top_pad">
+					<!--<div class="col-md-11 bold pad">-->
+						POC Supported:
+				</div>
+				<div class="row">
+					<div id="list" class="col-md-6"></div>
+					<div class="col-md-6"></div>
+				</div>
+
+			</div>
+		</div>
+		<hr>
+</div>
+
+
+{% endblock %}
