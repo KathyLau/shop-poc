@@ -25,10 +25,8 @@ def register():
 
         bname = request.form['bname']
         email = request.form['email']
-        oname = request.form['oname']
         phone = request.form['phone']
         address = request.form['address']
-        confirm = request.form['confirm']
         hours = request.form['hours']
         site = request.form['site']
         insta = request.form['insta']
@@ -46,7 +44,7 @@ def register():
         }
         # code for mongodb to insert into db
 
-        return redirect(url_for('home'))
+        return render_template('index.html', data=new_entry)
 
 
 if __name__ == '__main__':
