@@ -23,6 +23,9 @@ Users will be able to give certain tags and attribute certain photos and comment
 2. pip install -r requirements.txt
 3. python app.py
 
+## Example
+![Alt text](/demos/ss.png?raw=true "Optional Title")
+
 ## Live app
 https://limitless-dawn-67321.herokuapp.com/
 
