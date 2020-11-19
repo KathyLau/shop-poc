@@ -11,13 +11,18 @@ def home():
         return render_template('index.html')
 
 
+@app.route('/restaurant')
+def restaurant(name=None):
+    return render_template('index.html', data='data')
+
+
 # to register a business
-@ app.route('/register', methods=['GET', 'POST'])
+@ app.route('/create', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
-        return render_template('register.html')
+        return render_template('create.html')
     elif request.method == 'POST':
-        '''
+
         bname = request.form['bname']
         email = request.form['email']
         oname = request.form['oname']
@@ -28,7 +33,19 @@ def register():
         site = request.form['site']
         insta = request.form['insta']
         cuisine = request.form['cuisine']
-        '''
+
+        new_entry = {
+            'bname': bname,
+            'email': email,
+            'phone': phone,
+            'address': address,
+            'hours': hours,
+            'site': site,
+            'insta': insta,
+            'cuisine': cuisine
+        }
+        # code for mongodb to insert into db
+
         return redirect(url_for('home'))
 
 
