@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block body %}
+<div >
+
+    <style >
+    	# name{
+			font - size: 25px;
+			padding: 20px;
+			justify - content: center;
+			background - color: whitesmoke;
+			margin - top: 20px;
+			margin - bottom: 20px;
+		}
+		.pad{
+			margin-bottom: 8px;
+			margin-top: 8px;
+		}
+		.extrapad{
+			margin-top: 13px;
+			margin-bottom: 13px;
+		}
+		.red_warn{
+			color:red;
+			font-weight: bold;
+		}
+		.right{
+			text-align: right;
+		}
+		# submit_button{
+			background-color: dodgerblue;
+			color: white;
+			padding-left: : 8px;
+			padding-right: 8px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+		.red_mini{
+			color: red;
+		}
+		.blue_success{
+			color: dodgerblue;
+			font-weight: bold;
+		}
+		.outline{
+			border: 1px solid black;
+		}
+		.red_location{
+			color: red;
+			font-size: 11px;
+		}
+    </style>
+    <div class="row" id="name">
+			Add a Shop:
+		</div>
+
+		<div class="row pad">
+			<div class="col-md-3"></div>
+			<div class="col-md-9" id="top_warn"></div>
+		</div>
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Restaurant Name:
+			</div>
+
+			<div class="col-md-6">
+				<input name="name_entry" rows="1" placeholder="Name of Restaurant" id="name_entry" class="form-control"></input>
+			</div>
+
+
+			<div class="col-md-3 red_mini" id="name_warn"></div>
+
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Borough:
+			</div>
+
+			<div class="col-md-6">
+				<input name="location_entry" rows="1" placeholder="Borough" id="location_entry" class="form-control"></input>
+			</div>
+
+
+			<div class="col-md-3" id="location_warn"></div>
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Rating (out of 5):
+			</div>
+			<div class="col-md-6">
+				<input name="rating_entry" rows="1" placeholder="Rating (out of 5)" id="rating_entry" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="rating_warn"></div>
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Description:
+			</div>
+			<div class="col-md-6">
+				<input name="text_entry" rows="1" placeholder="Description" id="text_entry" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="text_warn"></div>
+		</div>
+
+
+		<div class="row extrapad">
+			<div class="col-md-3 right">
+				Popular Dishes:
+			</div>
+			<div class="col-md-6">
+				<input name="pop_dish_entry_1" rows="1" placeholder="Dish 1" id="pop_dish_entry_1" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id= "dish_warn"></div>
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Image:
+			</div>
+			<div class="col-md-6">
+				<input name="img_entry" rows="1" placeholder="Copy jpeg of Image Here" id="img_entry" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="img_warn"></div>
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right"></div>
+			<div class="col-md-9">
+				<button id="submit_button"> Submit </button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9" id="linkarea"></div>
+
+		</div>
+
+</div>
+{% endblock %}
