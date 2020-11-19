@@ -79,6 +79,7 @@ def register():
         return redirect(url_for('home'))
 
 
+# handles search bar searches
 @app.route('/search/', methods=['GET', 'POST'])
 def search():
     global bizlist
@@ -96,6 +97,7 @@ def search():
     return render_template('matches.html', searchterm=searchterm, bizlist=bizlist, searchlist=searchlist, returnlist=returnlist)  # noqa: E501
 
 
+# renders search results page
 @app.route('/view/<id>', methods=['GET', 'POST'])
 def view(id=id):
     global bizlist
@@ -109,6 +111,7 @@ def view(id=id):
     return render_template('view.html', returnlist=returnlist)
 
 
+# displays cards of the buisness
 @app.route('/displaycards', methods=['GET', 'POST'])
 def displaycards():
     global bizlist

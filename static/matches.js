@@ -1,11 +1,14 @@
+//a function to show the cards of buisnesses related to the search term
 function showcards(searchlist, searchterm){
 
+    //establishing number of results found
     var n = searchlist.length
     var thenumber = $("<div>")
     $(thenumber).text("Found "+n+" result(s)")
     $(thenumber).addClass("bold")
     $("#numberofresults").append(thenumber)
 
+    //creating card deck
     var row1 = $("<div class='card-deck'>")
 
     $.each(searchlist, function(i,value){
@@ -21,33 +24,30 @@ function showcards(searchlist, searchterm){
         var rating = $("<p class='card-text'>");
         var location = $("<p class='card-text'>");
 
-
+        //card click function
         $(card).click(function(){
             console.log("row id: " + value["id"])
             var route = "http://127.0.0.1:5000/view/"+value["id"];
-            //var route = "view"
             window.location.href=route;
-            //window.location.href= "{{ url_for('view', id = 'stuff') }}".replace("stuff", id);
-            //return false;
         })
 
         $(name).text(searchlist[i]["name"]);
 
-        
+        //set all searchable fields to lowercase to make them easily comparable
         var name_lower = value["name"].toLowerCase()
         var loc_lower = value["location"].toLowerCase()
         var search_lower = searchterm.toLowerCase()
+
+        //highlight the field with search term in it yellow, to make it clear what matched
         if(name_lower.includes(search_lower)){
             $(name).addClass("yellow");
         }
         if(loc_lower.includes(search_lower)){
             $(location).addClass("yellow");
         }
-        //$(name).addClass("red")
+    
         $(location).text(searchlist[i]["location"])
         $(rating).text(searchlist[i]["rating"]+" out of 5 Stars");
-
-        //var star = $("<span class='glyphicon glyphicon-star-empty'>")
 
 
         $(card).append(img);
@@ -64,21 +64,23 @@ function showcards(searchlist, searchterm){
 
 $(document).ready(function(){
 
+    //set up search results row
     var topName = $("<div>")
     $(topName).text("Search Results for '"+ searchterm+ "'")
     $("#name").append(topName)
 
+    //display cards of buisness that match searched term
     if(searchlist.length>0){
         showcards(searchlist, searchterm);
-        //displayResultBanner();
-        //displayResults(searchlist);
     }
     else{
+    //if no cards match searched term, say there are no results
         var message = $("<div>");
         $(message).text("There are 0 results");
         $(message).addClass("red");
         $("#numberofresults").append(message);
     }
+    //refocus cursor in searchbox
     $("#top_search_input").val('').focus();
     
 })

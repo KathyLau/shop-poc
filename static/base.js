@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-//search
+//handles search if user clicks the go button in search bar
     $("#top_submit_button").click(function(){
       //get user input
       var search_input = $("#top_search_input").val()
@@ -11,11 +11,10 @@ $(document).ready(function(){
           var route = "http://127.0.0.1:5000/search/?s="+search_input;
           window.location.href=route;
         }
-      //search(search_input);
-      //don't forget to catch for caps, mispelling, hitting enter, !!!!!!
 
     })
 
+    //handles search if user hits enter in the searchbar
     $("#top_search_input").keypress(function(e) {
       if (e.keyCode == 13) {
         var search_input = $("#top_search_input").val()
