@@ -3,7 +3,13 @@
 {% block content %}
 <div>
 
-	<script type="text/javascript" src="{{ url_for('static', filename = 'index.js') }}"></script>
+	<script type="text/javascript">
+	 	var bizlist = {{bizlist|tojson}}
+	 	var returnlist = {{returnlist|tojson}}
+	 	var searchlist = {{searchlist|tojson}}
+	 	var searchterm ={{searchterm|tojson}}
+    </script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'matches.js') }}"></script>
 	<style>
 		.outline{
 			border: 1px solid black;
@@ -52,6 +58,7 @@
 		}
 		.row_outline:hover{
 			background-color: whitesmoke;
+			
 			cursor: pointer;
 			border: 3px solid dodgerblue;
 		}
@@ -63,20 +70,38 @@
 		}
 		.card-deck {
 		    display: grid;
-		    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+		    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
 		    grid-gap: .5rem;
+		}
+		.yellow{
+			background-color: gold;
 		}
 </style>
 
 		<div id="name" class="row">
-			ShopPoc
 		</div>
+		<!--
 		<div class="bottom_pad grey">
-			Find small, black-owned and POC-owned businesses in New York City to shop
+			To help taco-lovers find highly-rated tacos places in any borough of New York City
 		</div>
+		<div class="bottom_pad">
+			Search:
+		</div>
+		<div class="bottom_pad">
+			<input name="search" rows="1" placeholder="Search by Borough (i.e. Manhattan, Queens, the Bronx, etc.)" id="search_input" class="form-control"></input>
+		</div>
+		<div class="bottom_pad">
+				
+		
+			<button id="submit_button"> Submit </button>
+		</div>
+	-->
 
+		<div class="top_pad" id="numberofresults"></div>
 		<div class="top_pad" id="results">
 		</div>
 </div>
+
+
 
 {% endblock %}
