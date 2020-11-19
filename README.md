@@ -17,5 +17,14 @@ Users of the application can give names to unnamed small businesses (not named o
 ## Tags and photos
 Users will be able to give certain tags and attribute certain photos and comments to the businesses
 
+## Deployment Steps
+
+1. Make sure you have python and pip installed
+2. pip install -r requirements.txt
+3. python app.py
+
+## Live app
+https://limitless-dawn-67321.herokuapp.com/
+
 ## Team Members
 Kathy Lau and Doria Chen
