@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
+from geopy.geocoders import Nominatim
 app = Flask(__name__)
 
 searchterm = "Search Results"
+api_key = "AIzaSyD43vlw78-rgjz6a5iczPSEDO1bxQC9hZ0"
 current_id = 4
 bizlist = [
     {
@@ -50,12 +52,21 @@ returnlist = []
 searchlist = []
 
 
+def geo_loc(address):
+    geolocator = Nominatim(user_agent="http")
+    location = geolocator.geocode(address)
+    print(location.address)
+    print((location.latitude, location.longitude))
+
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    # for biz in bizlist:
+    # print(geo_loc(biz['location']))
     if request.method == 'POST':
-        return render_template('index.html', API_KEY="api-key")
-    else:
         return render_template('index.html')
+    else:
+        return render_template('index.html', API_KEY=api_key, shops=bizlist)
 
 
 @app.route('/restaurant')
