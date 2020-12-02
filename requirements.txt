@@ -26,3 +26,6 @@ pymongo==3.3.0
 
 # For heroku
 gunicorn==20.0.4
+
+# For utils
+geopy==2.0.0
