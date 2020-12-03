@@ -27,7 +27,7 @@ function showcards(searchlist, searchterm){
         //card click function
         $(card).click(function(){
             console.log("row id: " + value["id"])
-            var route = "http://127.0.0.1:5000/view/"+value["id"];
+            var route = "../view/"+value["id"];
             window.location.href=route;
         })
 
