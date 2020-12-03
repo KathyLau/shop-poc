@@ -33,6 +33,7 @@
 		}
 		.top_pad{
 			margin-top: 50px;
+			position: relative;
 		}
 		.delete_button{
 			color: red;
@@ -41,7 +42,7 @@
 			font-weight: bold;
 		}
 		.row_outline{
-			
+
 		}
 		.pad_entry{
 			padding-top: 10px;
@@ -65,8 +66,20 @@
 		    display: grid;
 		    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
 		    grid-gap: .5rem;
+				position: absolute;
+				width: 60%;
 		}
 </style>
+<script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 40.8045, lng: -73.9572 },
+          zoom: 8,
+        });
+      }
+    </script>
 
 		<div id="name" class="row">
 			ShopPoc
@@ -77,6 +90,9 @@
 
 		<div class="top_pad" id="results">
 		</div>
+
+		<div id="map" style="width: 40%; height: 600px; position: relative; float: right; overflow: hidden;"> </div>
+
 </div>
 
 {% endblock %}

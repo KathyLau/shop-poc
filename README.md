@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/static/v1?label=license&message=MIT&color=red)](https://github.com/KathyLau/COMS4995/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/KathyLau/shop-poc.png?branch=master)](https://travis-ci.org/KathyLau/shop-poc)
+[![Build Status](https://travis-ci.com/KathyLau/shop-poc.png?branch=master)](https://travis-ci.com/KathyLau/shop-poc)
 [![codecov](https://codecov.io/gh/KathyLau/shop-poc/branch/master/graph/badge.svg)](https://codecov.io/gh/KathyLau/shop-poc)
 [![Documentation Status](https://readthedocs.org/projects/shop-poc/badge/?version=latest)](https://shop-poc.readthedocs.io/en/latest/?badge=latest)
 
@@ -22,6 +22,9 @@ Users will be able to give certain tags and attribute certain photos and comment
 1. Make sure you have python and pip installed
 2. pip install -r requirements.txt
 3. python app.py
+
+## Example
+![Alt text](/demos/ss.png?raw=true "Optional Title")
 
 ## Live app
 https://limitless-dawn-67321.herokuapp.com/
