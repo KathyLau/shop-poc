@@ -8,7 +8,7 @@ $(document).ready(function(){
       search_input = search_input.trim();
       console.log("input: "+ search_input)
       if(search_input.length>0){
-          var route = "http://127.0.0.1:5000/search/?s="+search_input;
+          var route = "../search/?s="+search_input;
           window.location.href=route;
         }
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
         search_input = search_input.trim();
         console.log("input: "+ search_input)
         if(search_input.length>0){
-          var route = "http://127.0.0.1:5000/search/?s="+search_input;
+          var route = "../search/?s="+search_input;
           window.location.href=route;
         }
       }
