@@ -24,7 +24,7 @@ Users will be able to give certain tags and attribute certain photos and comment
 3. python app.py
 
 ## Example
-![Alt text](/demos/ss2.png?raw=true "Optional Title")
+![Alt text](/demos/ss_2.png?raw=true "Optional Title")
 
 ## Live app
 https://limitless-dawn-67321.herokuapp.com/
