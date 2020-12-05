@@ -2,7 +2,7 @@
 function clearDisplay(){
 	$("#name").empty();
 	$("#location").empty();
-	$("#rating").empty();
+	$("#service").empty();
 	$("#image").empty();
 	$("#text").empty();
 	$("#list").empty();
@@ -13,12 +13,12 @@ function clearDisplay(){
 function display(returnlist){
 	//clear data from previous search (if any)
 	clearDisplay();
-	
+
 	//creating variables
 	var returnlist = returnlist
 	var name = $("<div>");
 	var location = $("<div>");
-	var rating = $("<div>");
+	var service = $("<div>");
 	var text = $("<div>");
 	var type = $("<div>");
 	var image = $("<img src="+returnlist[0]["image"]+">")
@@ -26,7 +26,7 @@ function display(returnlist){
 	//add attribute to make the image fluid
 	$(image).addClass("img-fluid")
 	var alt_text = returnlist[0]["name"]+" business";
-	
+
 	//add alt text to image
 	$(image).attr('alt', alt_text)
 
@@ -37,8 +37,8 @@ function display(returnlist){
 	$(location).text("Borough: " +returnlist[0]["location"]);
 	$("#location").append(location)
 
-	$(rating).text("Rating: "+returnlist[0]["rating"]+" out of 5 Stars");
-	$("#rating").append(rating)
+	$(service).text("service: "+returnlist[0]["service"]);
+	$("#service").append(service)
 
 	$(text).text(returnlist[0]["text"]);
 	$("#text").append(text)
@@ -61,9 +61,9 @@ function display(returnlist){
 	$(item).addClass("little_pad")
 
 	$("#list").append(item);
-		
+
 	})
-	
+
 
 
 }
