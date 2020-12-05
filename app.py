@@ -1,68 +1,21 @@
 from flask import Flask, render_template, request, jsonify
-from geopy.geocoders import Nominatim
+from load import generate_list
 app = Flask(__name__)
 
 searchterm = "Search Results"
 api_key = "AIzaSyD43vlw78-rgjz6a5iczPSEDO1bxQC9hZ0"
 current_id = 4
-bizlist = [
-    {
-        "id": 1,
-        "name": "Taqueria Sinaloense",
-        "image": "https://cdn.vox-cdn.com/thumbor/KcZGARj7ZLfVN_i9NHeziKdnkSk=/0x0:2048x1360/720x540/filters:focal(861x517:1187x843):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/63728603/TacoMapSinaloense.0.jpg",  # noqa: E501
-        "text": "With inspiration from the northwestern state of Sinaloa, Taqueria Sinaloense serves mainly a pan-Mexican menu in the Bronx’s Marble Hill, a picturesque neighborhood just north of the Harlem River. Two unique tacos are available, though, including tacos gobernador (“governor’s tacos”) loaded with shrimp and hot green chiles and little else; and tacos de canasta, with the tortillas dipped in oil as a sort of temporary preservative that allows them to be sold from baskets by street vendors, hence the name. It is delicious. Highly Reccomend.",  # noqa: E501
-        "rating": 4.5,
-        "location": "the Bronx",
-        "type": "Restaurant",
-        "racelist": [{"race": "East Asian"}]
-    },
-    {
-        "id": 2,
-        "name": "Estrellita Poblana III",
-        "image": "https://cdn.vox-cdn.com/thumbor/9WZva7Fg4TeIWXDkzZSSK71y0UE=/0x0:2048x1360/870x653/filters:focal(861x517:1187x843):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/66162713/BirriaTacos.0.jpg",  # noqa: E501
-        "text": "Despite its unexpected location in the midst of the Bronx’s Little Italy, this informal sit-down “Little Star of Puebla” (founded 1999) has some of the tastiest tacos in town, especially where organ meats are concerned. Thrill to the cabeza (gooey head meat) and lengua (long-braised tongue). In fact, all tacos are good — though skip the shrimp — and the salsas are homemade. Just amazing.",  # noqa: E501
-        "rating": 4.0,
-        "location": "the Bronx",
-        "type": "Restaurant",
-        "racelist": [{"race": "Black"}]
-    },
-    {
-        "id": 3,
-        "name": "La Morada",
-        "image": "https://cdn.vox-cdn.com/thumbor/7N-ELwR-aMgG-8gl8YmBE5YlZGY=/0x0:3200x2400/870x653/filters:focal(1344x944:1856x1456):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/63728607/TacoMapGlorias.0.jpg",  # noqa: E501
-        "text": "This relentlessly purple Mott Haven restaurant run by Oaxcans has become famous for its Oaxacan moles and tlayudas, with some pan-Southern Mexican, Tex-Mex, and Cal-Mex thrown in. The standard roster of two-corn-tortilla soft tacos are available in excellent renditions, including carne enchilada, al pastor, chorizo, and a particularly noteworthy bistec asado. The welcoming staff is an added plus. Try this Bronx gem.",  # noqa: E501
-        "rating": 4.5,
-        "location": "the Bronx",
-        "type": "Restaurant",
-        "racelist": [{"race": "Southern Asian"}]
-    },
-    {
-        "id": 4,
-        "name": "The Little Taco House",
-        "image": "https://cdn.vox-cdn.com/thumbor/dIgp2rTgRWVe5RqZxsS6n2aWIik=/0x0:3200x2400/570x428/filters:focal(1344x944:1856x1456):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/63728608/TacoMapLittleTacoHouse.0.jpg",  # noqa: E501
-        "text": "It’s about time! Neighborhoods that had been underserved with taquerias are finally getting these crowd pleasing institutions, and the West Village is a case in point. Once a tailor shop, Little Taco House is as unpretentious as the name suggests, a small counter at which a handful of antojitos are prepared. Yes, the menu of stuffings is limited, but every one is done well. The tongue tacos are a current favorite, with chorizo and carne asada a close second and third.",  # noqa: E501
-        "rating": 4.0,
-        "location": "Manhattan",
-        "type": "Restaurant",
-        "racelist": [{"race": "East Asian"}, {"race": "Black"}]
-    }
-]
+
+bizlist = generate_list("data/black-owned-restaurants-nyc.csv")
+bizlist[-10:]
+bizlist = bizlist[::-1]
+
 returnlist = []
 
 searchlist = []
 
-
-def geo_loc(address):
-    geolocator = Nominatim(user_agent="http")
-    location = geolocator.geocode(address)
-    print(location.address)
-    print((location.latitude, location.longitude))
-
-
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    # for biz in bizlist:
-    # print(geo_loc(biz['location']))
     if request.method == 'POST':
         return render_template('index.html')
     else:
