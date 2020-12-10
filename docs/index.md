@@ -29,7 +29,7 @@ None
 ## FAQ
 To be determined
 ## Release Notes and Version Info
-Version 1.0.0
+Version 0.2.0
 # Developer Documentation
 Currently, Shop-POC has created a GitHub repository, added testing files, set up automated testing, code coverage and linting
 ## CI Documentation
