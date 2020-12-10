@@ -1,6 +1,11 @@
 {% extends "base.html" %}
-{% block body %}
+
+{% block content %}
 <div >
+	<script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script>
+	<script type="text/javascript">
+	 	var suggestionlist = {{suggestionlist|tojson}}
+    </script>
 
     <style >
     	# name{
@@ -59,7 +64,7 @@
 		</div>
 		<div class="row pad">
 			<div class="col-md-3 right">
-				Restaurant Name:
+				Name:
 			</div>
 
 			<div class="col-md-6">
@@ -69,6 +74,26 @@
 
 			<div class="col-md-3 red_mini" id="name_warn"></div>
 
+		</div>
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Type:
+			</div>
+			<div class="col-md-6">
+				<input name="img_entry" rows="1" placeholder="What type of business?" id="type_entry" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="type_warn"></div>
+		</div>
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Service:
+			</div>
+			<div class="col-md-6">
+				<input name="text_entry" rows="1" placeholder="Service" id="service_entry" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="service_warn"></div>
 		</div>
 
 
@@ -88,34 +113,12 @@
 
 		<div class="row pad">
 			<div class="col-md-3 right">
-				Rating (out of 5):
+				Website Address:
 			</div>
 			<div class="col-md-6">
-				<input name="rating_entry" rows="1" placeholder="Rating (out of 5)" id="rating_entry" class="form-control"></input>
+				<input name="rating_entry" rows="1" placeholder="Website address" id="web_entry" class="form-control"></input>
 			</div>
-			<div class="col-md-3 red_mini" id="rating_warn"></div>
-		</div>
-
-
-		<div class="row pad">
-			<div class="col-md-3 right">
-				Description:
-			</div>
-			<div class="col-md-6">
-				<input name="text_entry" rows="1" placeholder="Description" id="text_entry" class="form-control"></input>
-			</div>
-			<div class="col-md-3 red_mini" id="text_warn"></div>
-		</div>
-
-
-		<div class="row extrapad">
-			<div class="col-md-3 right">
-				Popular Dishes:
-			</div>
-			<div class="col-md-6">
-				<input name="pop_dish_entry_1" rows="1" placeholder="Dish 1" id="pop_dish_entry_1" class="form-control"></input>
-			</div>
-			<div class="col-md-3 red_mini" id= "dish_warn"></div>
+			<div class="col-md-3 red_mini" id="web_warn"></div>
 		</div>
 
 
@@ -135,12 +138,6 @@
 			<div class="col-md-9">
 				<button id="submit_button"> Submit </button>
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-9" id="linkarea"></div>
-
 		</div>
 
 </div>

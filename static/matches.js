@@ -17,7 +17,7 @@ function showcards(searchlist, searchterm){
 
         var img = $("<img class='card-img-top' src=" +searchlist[i]["image"]+ ">");
         var alt_t = searchlist[i]["name"]+" taco"
-        console.log(alt_t);
+        console.log(alt_t); //log name to console
         $(img).attr('alt', alt_t);
         var cardbodydiv = $("<div class='card-body'>");
         var name = $("<h5 class='card_title'>");
@@ -63,6 +63,7 @@ function showcards(searchlist, searchterm){
 }
 
 $(document).ready(function(){
+	console.log("MATCHES")
 
     //set up search results row
     var topName = $("<div>")

@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 searchterm = "Search Results"
 api_key = "AIzaSyD43vlw78-rgjz6a5iczPSEDO1bxQC9hZ0"
-current_id = 4
 
 bizlist = generate_list("data/black-owned-restaurants-nyc.csv")
 bizlist[-10:]
@@ -13,6 +12,8 @@ bizlist = bizlist[::-1]
 returnlist = []
 
 searchlist = []
+suggestionlist = []
+suggestionlistlength = 0
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -26,37 +27,6 @@ def home():
 @app.route('/restaurant')
 def restaurant(name=None):
     return render_template('index.html', data='data')
-
-
-# to register a business
-@ app.route('/create', methods=['GET', 'POST'])
-def register():
-    if request.method == 'GET':
-        return render_template('create.html')
-    elif request.method == 'POST':
-
-        bname = request.form['bname']
-        email = request.form['email']
-        phone = request.form['phone']
-        address = request.form['address']
-        hours = request.form['hours']
-        site = request.form['site']
-        insta = request.form['insta']
-        cuisine = request.form['cuisine']
-
-        new_entry = {
-            'bname': bname,
-            'email': email,
-            'phone': phone,
-            'address': address,
-            'hours': hours,
-            'site': site,
-            'insta': insta,
-            'cuisine': cuisine
-        }
-        # code for mongodb to insert into db
-
-        return render_template('index.html', data=new_entry)
 
 
 # handles search bar searches
@@ -89,6 +59,41 @@ def view(id=id):
             returnlist.append(place)
             break
     return render_template('view.html', returnlist=returnlist)
+
+
+# renders create page
+@app.route('/create', methods=['GET', 'POST'])
+def create(name=None):
+    global bizlist
+    return render_template('create.html', suggestionlist=suggestionlist)
+
+
+# adds suggested restaurants to list
+@app.route('/add', methods=['GET', 'POST'])
+def add(name=None):
+    global suggestionlist
+    global suggestionlistlength
+    suggestionlistlength = suggestionlistlength+1
+
+    json_data = request.get_json()
+    gname = json_data["name"]
+    glocation = json_data["location"]
+    gtext = json_data["text"]
+    gservice = json_data["service"]
+    gimage = json_data["image"]
+    gtype = json_data["type"]
+
+    new_entry = {
+        "name": gname,
+        "location": glocation,
+        "text": gtext,
+        "service": gservice,
+        "image": gimage,
+        "type": gtype
+    }
+
+    suggestionlist.append(new_entry)
+    return jsonify(suggestionlist=suggestionlist)
 
 
 # displays cards of the buisness
