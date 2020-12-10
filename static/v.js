@@ -37,11 +37,12 @@ function display(returnlist){
 	$(location).text("Borough: " +returnlist[0]["location"]);
 	$("#location").append(location)
 
-	$(service).text("service: "+returnlist[0]["service"]);
+	$(service).text("Service: "+returnlist[0]["service"]);
 	$("#service").append(service)
 
+	//NOTE: TEXT = WEBSITE
 	$(text).text(returnlist[0]["text"]);
-	$("#text").append(text)
+	$("#website").append(text)
 
 	$(type).text("Type of Business: "+returnlist[0]["type"]);
 	$("#type").append(type)
