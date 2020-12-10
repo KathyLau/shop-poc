@@ -14,14 +14,14 @@ function showcards(searchlist, searchterm){
     $.each(searchlist, function(i,value){
         var card = $("<div class='card'>");
         $(card).attr("id", value["id"]);
-        
+
         var img = $("<img class='card-img-top' src=" +searchlist[i]["image"]+ ">");
         var alt_t = searchlist[i]["name"]+" taco"
         console.log(alt_t);
         $(img).attr('alt', alt_t);
         var cardbodydiv = $("<div class='card-body'>");
         var name = $("<h5 class='card_title'>");
-        var rating = $("<p class='card-text'>");
+        var service = $("<p class='card-text'>");
         var location = $("<p class='card-text'>");
 
         //card click function
@@ -45,15 +45,15 @@ function showcards(searchlist, searchterm){
         if(loc_lower.includes(search_lower)){
             $(location).addClass("yellow");
         }
-    
+
         $(location).text(searchlist[i]["location"])
-        $(rating).text(searchlist[i]["rating"]+" out of 5 Stars");
+        $(service).text(searchlist[i]["service"]);
 
 
         $(card).append(img);
         $(cardbodydiv).append(name);
         $(cardbodydiv).append(location);
-        $(cardbodydiv).append(rating);
+        $(cardbodydiv).append(service);
         $(card).append(cardbodydiv);
         $(card).addClass("row_outline")
         $(row1).append(card);
@@ -82,5 +82,5 @@ $(document).ready(function(){
     }
     //refocus cursor in searchbox
     $("#top_search_input").val('').focus();
-    
+
 })
