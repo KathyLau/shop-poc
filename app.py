@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from load import generate_list
+from utils.load import generate_list
 app = Flask(__name__)
 
 searchterm = "Search Results"
