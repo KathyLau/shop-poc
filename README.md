@@ -35,7 +35,7 @@ python app.py
 5. Go on https://127.0.0.1:5000 !
 
 ## Example
-![Alt text](/demos/ss_2.png?raw=true "Optional Title")
+![Alt text](/static/images/ss_2.png?raw=true "Optional Title")
 
 ## Live app
 https://limitless-dawn-67321.herokuapp.com/
