@@ -29,7 +29,7 @@ None
 ## FAQ
 To be determined
 ## Release Notes and Version Info
-Version 1.0.0
+Version 0.2.0
 # Developer Documentation
 Currently, Shop-POC has created a GitHub repository, added testing files, set up automated testing, code coverage and linting
 ## CI Documentation
@@ -40,8 +40,8 @@ Currently, Shop-POC has created a GitHub repository, added testing files, set up
 ## Extensions and Integration authors
 - Currently no extentions or integration authors
 ## Release Notes and Roadmap
-- Version 1.0.0 is not yet functional for use or download, but has set up structure of code
-- Next release will include the integration of the Google Maps API
+- Version 0.2.0 is not fully functional for use or download
+- Current release has integrated use of the Google Maps API and added a create page, on top of existing structure from Version 0.1.0
 # API Documentation
 - Shop-POC uses the Google Maps API. Further API documentation can be found here
 

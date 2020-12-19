@@ -21,9 +21,6 @@ codecov==2.1.10
 pytest-flake8==1.0.6
 flake8==3.8.4
 
-# For Pymongo
-pymongo==3.3.0
-
 # For heroku
 gunicorn==20.0.4
 
