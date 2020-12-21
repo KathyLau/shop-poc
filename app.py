@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from utils.load import generate_list
+from utils.setup import selectshopbyname, selectshops, insert
 from utils.store import store_suggestion
 app = Flask(__name__)
 
@@ -22,7 +23,7 @@ def home():
     if request.method == 'POST':
         return render_template('index.html')
     else:
-        return render_template('index.html', API_KEY=api_key, shops=bizlist)
+        return render_template('index.html', API_KEY=api_key, searchlist=bizlist)
 
 
 @app.route('/restaurant')
@@ -41,11 +42,22 @@ def search():
     returnlist.clear()
     searchlist.clear()
 
-    searchterm = request.args.get('s')
-    for (index, place) in enumerate(bizlist):
-        if (searchterm in place["location"]) or (searchterm in place["name"]) or (searchterm in (place["location"]).lower()) or (searchterm in (place["name"]).lower()):  # noqa: E501
-            searchlist.append(place)
-    return render_template('matches.html', searchterm=searchterm, bizlist=bizlist, searchlist=searchlist, returnlist=returnlist)  # noqa: E501
+    searchterm = request.args.get('s').capitalize()
+    shops = selectshops(searchterm) + selectshopbyname(searchterm)
+    for shop in shops:
+        searchlist.append({
+        "address": [shop[6], shop[7]],
+        "id": shop[0],
+        "image": shop[2],
+        "name": shop[1],
+        "service": shop[4],
+        "text": shop[3],
+        "location": shop[5],
+        "type": "Restaurant"
+        })
+    bizlist = searchlist
+
+    return render_template('matches.html', searchterm=searchterm, bizlist=bizlist, searchlist=searchlist, returnlist=returnlist, API_KEY=api_key)  # noqa: E501
 
 
 # renders search results page
