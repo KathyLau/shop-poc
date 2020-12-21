@@ -23,7 +23,7 @@ def home():
     if request.method == 'POST':
         return render_template('index.html')
     else:
-        return render_template('index.html', API_KEY=api_key, searchlist=bizlist) # noqa: E501
+        return render_template('index.html', API_KEY=api_key, searchlist=bizlist)  # noqa: E501
 
 
 @app.route('/restaurant')
