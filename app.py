@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from utils.load import generate_list
 from utils.setup import selectshopbyname, selectshops
-from utils.store import store_suggestion
+from utils.store import create_sugg_table, insert
 app = Flask(__name__)
 
 searchterm = "Search Results"
@@ -16,6 +16,7 @@ returnlist = []
 searchlist = []
 suggestionlist = []
 suggestionlistlength = 0
+create_sugg_table()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -106,7 +107,10 @@ def add(name=None):
     }
 
     suggestionlist.append(new_entry)
-    store_suggestion("data/suggestions.csv", suggestionlist)
+    insert(suggestionlistlength-1, suggestionlist[-1]["name"],
+           suggestionlist[-1]["image"],
+           suggestionlist[-1]["text"], suggestionlist[-1]["service"],
+           suggestionlist[-1]["location"], suggestionlist[-1]["type"])
     return jsonify(suggestionlist=suggestionlist)
 
 
