@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from utils.load import generate_list
+from utils.store import store_suggestion
 app = Flask(__name__)
 
 searchterm = "Search Results"
@@ -93,6 +94,7 @@ def add(name=None):
     }
 
     suggestionlist.append(new_entry)
+    store_suggestion("data/suggestions.csv", suggestionlist)
     return jsonify(suggestionlist=suggestionlist)
 
 
