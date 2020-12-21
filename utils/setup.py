@@ -2,7 +2,7 @@ import sqlite3
 import csv
 from geopy.geocoders import Nominatim
 
-conn = sqlite3.connect('../data/shops.db')
+conn = sqlite3.connect('./data/shops.db', check_same_thread=False)
 c = conn.cursor()
 
 
@@ -80,6 +80,3 @@ def selectshops(borough):
     c.execute('SELECT * FROM shops WHERE LOCATION=?', (borough,))
     rows = c.fetchall()
     return rows
-
-
-conn.close()

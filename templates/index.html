@@ -70,33 +70,6 @@
 				width: 60%;
 		}
 </style>
-<script>
-      function initMap() {
-				const locations = {{shops |safe }};
-
-        var map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 40.8045, lng: -73.9572 },
-          zoom: 12,
-        });
-
-				var infowindow = new google.maps.InfoWindow();
-				var markers, i;
-
-				for (i = 0; i < locations.length; i++) {
-	      marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(locations[i]['address'][0], locations[i]['address'][1]),
-	        map: map
-	      });
-
-				google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i]['name']);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-      }
-		}
-    </script>
 
 		<div id="name" class="row">
 			ShopPoc
