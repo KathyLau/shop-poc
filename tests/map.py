@@ -14,6 +14,10 @@ def inc(x):
 # searchbar method that should only accept strings in search bar
 def searchbar():
     """ Ensures seach bar only accepts strings
+
+    Parameters
+    ----------
+    none
     """
     searchvalue = "poke restaurant"
     if isinstance(searchvalue, str):
@@ -24,6 +28,10 @@ def searchbar():
 
 def dist():
     """ Ensures distance value is an integer
+
+    Parameters
+    ----------
+    none
     """
     distvalue = 500
     if isinstance(distvalue, int):
@@ -34,6 +42,10 @@ def dist():
 
 def borough():
     """ Ensures the borough entered is a string
+
+    Parameters
+    ----------
+    none
     """
     bvalue = "Brooklyn"
     if isinstance(bvalue, str):

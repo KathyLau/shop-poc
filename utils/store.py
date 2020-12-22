@@ -30,3 +30,21 @@ def countSuggestionsInDB():
     c.execute('''SELECT COUNT(*) FROM suggestedShops''')
     num = c.fetchall()[0][0]
     return num
+
+
+def getMaxID():
+    c.execute('''SELECT max(id) from suggestedShops''')
+    max_id = c.fetchone()[0]
+    return max_id
+
+
+def getNameOfLastRow():
+    sql_st = '''SELECT * FROM suggestedShops WHERE id = (SELECT max(id) FROM suggestedShops)''' # noqa
+    c.execute(sql_st)
+    name = c.fetchone()[1]
+    return name
+
+
+def deleteExtraFakeRecord():
+    c.execute('DELETE FROM suggestedShops WHERE name  LIKE ?', ('%FakeNameRestaurantTester%',)) # noqa
+    conn.commit()
