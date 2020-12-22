@@ -83,11 +83,13 @@ def selectshops(borough):
     rows = c.fetchall()
     return rows
 
+
 def updateshopbyname(id, newname):
     id = "%" + id + "%"
     newterm = "%" + newname + "%"
     c.execute('UPDATE shops SET NAME = ? WHERE ID = ?', (newterm, id,))
     conn.commit()
+
 
 def updateshopbyservice(id, service):
     id = "%" + id + "%"
@@ -95,14 +97,16 @@ def updateshopbyservice(id, service):
     c.execute('UPDATE shops SET SERVICE = ? WHERE ID = ?', (service, id,))
     conn.commit()
 
+
 def updateshopbytext(id, text):
     id = "%" + id + "%"
     text = "%" + text + "%"
     c.execute('UPDATE shops SET TEXT = ? WHERE ID = ?', (text, id,))
     conn.commit()
 
+
 def updateshopbyimage(id, image):
     id = "%" + id + "%"
-    img= "%" + image + "%"
+    img = "%" + image + "%"
     c.execute('UPDATE shops SET IMAGE = ? WHERE ID = ?', (img, id,))
     conn.commit()

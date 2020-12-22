@@ -3,12 +3,14 @@ import sqlite3
 conn = sqlite3.connect('./data/customers.db', check_same_thread=False)
 c = conn.cursor()
 
+
 def create_user_table():
     c.execute('''CREATE TABLE IF NOT EXISTS CUSTOMERS
              (ID INT,
               NAME TEXT,
               EMAIL TEXT);''')
     return True
+
 
 def create_reviews_table():
     c.execute('''CREATE TABLE IF NOT EXISTS REVIEWS
@@ -25,11 +27,13 @@ def insert_user(id, name, email):
     c.execute(sql, (id, name, email))
     conn.commit()
 
+
 def insert_review(id, reviewerid, stars, review):
     sql = '''INSERT INTO REVIEWS (ID, REVIEWERID, STARS, REVIEW)
              VALUES (?, ?, ?, ?)'''
     c.execute(sql, (id, reviewerid, stars, review))
     conn.commit()
+
 
 def update_user_email(id, email):
     id = "%" + id + "%"
