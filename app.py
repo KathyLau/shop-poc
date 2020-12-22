@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from utils.setup import selectshopbyname, selectshops, selectdefaultshops
-from utils.store import insert
+from utils.store import insert, countSuggestionsInDB
 app = Flask(__name__)
 
 searchterm = "Search Results"
@@ -102,7 +102,9 @@ def add(name=None):
     }
 
     suggestionlist.append(new_entry)
-    insert(suggestionlistlength-1, suggestionlist[-1]["name"],
+    num = countSuggestionsInDB()
+    number = num - 1
+    insert(number, suggestionlist[-1]["name"],
            suggestionlist[-1]["image"],
            suggestionlist[-1]["text"], suggestionlist[-1]["service"],
            suggestionlist[-1]["location"], suggestionlist[-1]["type"])
