@@ -70,6 +70,24 @@ def insert(id, name, image, text, service, location, lat, lon):
     conn.commit()
 
 
+def selectdefaultshops():
+    searchlist = []
+    c.execute('SELECT * FROM shops WHERE ID <= 10;')
+    rows = c.fetchall()
+    for shop in rows:
+        searchlist.append({
+            "address": [shop[6], shop[7]],
+            "id": shop[0],
+            "image": shop[2],
+            "name": shop[1],
+            "service": shop[4],
+            "text": shop[3],
+            "location": shop[5],
+            "type": "Restaurant"
+        })
+    return searchlist
+
+
 def selectshopbyname(name):
     term = "%" + name + "%"
     c.execute('SELECT * FROM shops WHERE LOWER(name) LIKE ?', (term,))
