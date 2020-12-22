@@ -24,3 +24,9 @@ def insert(id, name, image, website, service, location, type):
              VALUES (?, ?, ?, ?, ?, ?, ?)'''
     c.execute(sql, (id, name, image, website, service, location, type))
     conn.commit()
+
+
+def countSuggestionsInDB():
+    c.execute('''SELECT COUNT(*) FROM suggestedShops''')
+    num = c.fetchall()[0][0]
+    return num
