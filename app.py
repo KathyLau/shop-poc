@@ -1,22 +1,16 @@
 from flask import Flask, render_template, request, jsonify
-from utils.load import generate_list
-from utils.setup import selectshopbyname, selectshops
-from utils.store import create_sugg_table, insert
+from utils.setup import selectshopbyname, selectshops, selectdefaultshops
+from utils.store import insert
 app = Flask(__name__)
 
 searchterm = "Search Results"
 api_key = "AIzaSyD43vlw78-rgjz6a5iczPSEDO1bxQC9hZ0"
 
-bizlist = generate_list("data/black-owned-restaurants-nyc.csv")
-bizlist[-10:]
-bizlist = bizlist[::-1]
-
+bizlist = selectdefaultshops()
 returnlist = []
-
 searchlist = []
 suggestionlist = []
 suggestionlistlength = 0
-create_sugg_table()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -24,6 +18,7 @@ def home():
     if request.method == 'POST':
         return render_template('index.html')
     else:
+        bizlist = selectdefaultshops()
         return render_template('index.html', API_KEY=api_key, searchlist=bizlist)  # noqa: E501
 
 
@@ -122,8 +117,7 @@ def displaycards():
 
     returnlist.clear()
 
-    returnlist = bizlist[-10:]
-    returnlist = returnlist[::-1]
+    returnlist = selectdefaultshops()
     return jsonify(returnlist=returnlist)
 
 

@@ -7,7 +7,7 @@ c = conn.cursor()
 
 
 def create_table():
-    c.execute('''CREATE TABLE shops
+    c.execute('''CREATE TABLE IF NOT EXISTS shops
              (ID INT,
              NAME TEXT,
              IMAGE TEXT,
@@ -70,6 +70,24 @@ def insert(id, name, image, text, service, location, lat, lon):
     conn.commit()
 
 
+def selectdefaultshops():
+    searchlist = []
+    c.execute('SELECT * FROM shops WHERE ID <= 10;')
+    rows = c.fetchall()
+    for shop in rows:
+        searchlist.append({
+            "address": [shop[6], shop[7]],
+            "id": shop[0],
+            "image": shop[2],
+            "name": shop[1],
+            "service": shop[4],
+            "text": shop[3],
+            "location": shop[5],
+            "type": "Restaurant"
+        })
+    return searchlist
+
+
 def selectshopbyname(name):
     term = "%" + name + "%"
     c.execute('SELECT * FROM shops WHERE LOWER(name) LIKE ?', (term,))
@@ -82,3 +100,31 @@ def selectshops(borough):
     c.execute('SELECT * FROM shops WHERE LOWER(location) LIKE ?', (term,))
     rows = c.fetchall()
     return rows
+
+
+def updateshopbyname(id, newname):
+    id = "%" + id + "%"
+    newterm = "%" + newname + "%"
+    c.execute('UPDATE shops SET NAME = ? WHERE ID = ?', (newterm, id,))
+    conn.commit()
+
+
+def updateshopbyservice(id, service):
+    id = "%" + id + "%"
+    service = "%" + service + "%"
+    c.execute('UPDATE shops SET SERVICE = ? WHERE ID = ?', (service, id,))
+    conn.commit()
+
+
+def updateshopbytext(id, text):
+    id = "%" + id + "%"
+    text = "%" + text + "%"
+    c.execute('UPDATE shops SET TEXT = ? WHERE ID = ?', (text, id,))
+    conn.commit()
+
+
+def updateshopbyimage(id, image):
+    id = "%" + id + "%"
+    img = "%" + image + "%"
+    c.execute('UPDATE shops SET IMAGE = ? WHERE ID = ?', (img, id,))
+    conn.commit()
