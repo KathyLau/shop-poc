@@ -17,7 +17,7 @@ Each shop will be stored in an SQL table following key-value pairs:
 * location: borough of shop
 * lat: latitude address of shop
 * lon: longitude address of shop
-* type: type of business 
+* type: type of business
 
 ==================   ============
 Key                  Value
@@ -45,7 +45,7 @@ Each suggested shop will be stored in an SQL table following key-value pairs:
 * website: link to shop site to verify validity of shop
 * service: service offered regarding takeout and delivery
 * location: borough of shop
-* type: type of business 
+* type: type of business
 
 ==================   ============
 Key                  Value
@@ -66,7 +66,8 @@ Each customer will be stored in an SQL table following key-value pairs:
 
 * id: integer id of data entry
 * name: a string holding the customer's name
-* address: a string holding the customer's address
+* email: a string holding the customer's email address
+* password: a string holding the customer's login password
 
 ==================   ============
 Key                  Value
@@ -74,6 +75,7 @@ Key                  Value
 ID                   INT
 NAME                 TEXT
 EMAIL                TEXT
+PASSWORD             TEXT
 ==================   ============
 
 REVIEWS
@@ -96,5 +98,3 @@ SHOPID               INT
 RATING               INT
 REVIEW               TEXT
 ==================   ============
-
-

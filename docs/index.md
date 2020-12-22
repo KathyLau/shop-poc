@@ -22,26 +22,27 @@ Shop-POC is licensed under the MIT Licence as of 2020
 ## Features and functionality
 - Able to search for POC-owned businesses by business type, borough in New York City, and distance away
 
-- Next Features to be implemented:  Able to suggest new businesses to add
+- Next Features to be implemented:  Able to register users to leave reviews
 ## Tutorials/Code Examples
+https://limitless-dawn-67321.herokuapp.com/
 ## Existing Extensions and Integrations
 None
 ## FAQ
 To be determined
 ## Release Notes and Version Info
-Version 0.2.0
+Version 0.4.0
 # Developer Documentation
 Currently, Shop-POC has created a GitHub repository, added testing files, set up automated testing, code coverage and linting
 ## CI Documentation
 - Currently the use of 2 branches allows developers to continuously develop, test, and add features to the main repository shop-poc
 ## Testing, Linting and Styling Documentation
-- Currently Shop-POC uses flake8 for linting and has employed 
-- Testing is stored in tests/test_all.py and uses a mix of unit and integration tests
+- Currently Shop-POC uses flake8 for linting and has employed
+- Testing is stored in tests/ and uses a mix of unit and integration tests for both function and database testing
 ## Extensions and Integration authors
 - Currently no extentions or integration authors
 ## Release Notes and Roadmap
-- Version 0.2.0 is not fully functional for use or download
-- Current release has integrated use of the Google Maps API and added a create page, on top of existing structure from Version 0.1.0
+- Version 0.4.0 is functional for use or download, but not fully complete
+- Current release has integrated use of the Google Maps API and added a create page, on top of existing structure from Version 0.3.0
 # API Documentation
 - Shop-POC uses the Google Maps API. Further API documentation can be found here
 

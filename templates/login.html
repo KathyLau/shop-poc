@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+
+    <style >
+    	# name{
+			font - size: 25px;
+			padding: 20px;
+			justify - content: center;
+			background - color: whitesmoke;
+			margin - top: 20px;
+			margin - bottom: 20px;
+		}
+		.pad{
+			margin-bottom: 8px;
+			margin-top: 8px;
+		}
+		.extrapad{
+			margin-top: 13px;
+			margin-bottom: 13px;
+		}
+		.red_warn{
+			color:red;
+			font-weight: bold;
+		}
+		.right{
+			text-align: right;
+		}
+		# submit_button{
+			background-color: dodgerblue;
+			color: white;
+			padding-left: : 8px;
+			padding-right: 8px;
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+		.red_mini{
+			color: red;
+		}
+		.blue_success{
+			color: dodgerblue;
+			font-weight: bold;
+		}
+		.outline{
+			border: 1px solid black;
+		}
+		.red_location{
+			color: red;
+			font-size: 11px;
+		}
+    </style>
+    <div class="row" id="name">
+			Login:
+		</div>
+
+		<div class="row pad">
+			<div class="col-md-3"></div>
+			<div class="col-md-9" id="top_warn"></div>
+		</div>
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Name:
+			</div>
+
+			<div class="col-md-6">
+				<input name="name_entry" rows="1" placeholder="Email" id="name_entry" class="form-control"></input>
+			</div>
+
+
+			<div class="col-md-3 red_mini" id="name_warn"></div>
+
+		</div>
+
+		<div class="row pad">
+			<div class="col-md-3 right">
+				Password:
+			</div>
+			<div class="col-md-6">
+				<input name="img_entry" rows="1" placeholder="Password" id="type_entry" type="password" class="form-control"></input>
+			</div>
+			<div class="col-md-3 red_mini" id="type_warn"></div>
+		</div>
+
+
+		<div class="row pad">
+			<div class="col-md-3 right"></div>
+			<div class="col-md-9">
+				<button id="submit_button"> Submit </button>
+			</div>
+		</div>
+
+</div>
+{% endblock %}
