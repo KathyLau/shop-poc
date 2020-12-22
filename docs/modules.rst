@@ -7,8 +7,9 @@ tests
    tests
 
 database
-=====
+========
+
 .. toctree::
    :maxdepth: 2
-   
+
    database

@@ -12,10 +12,18 @@ tests.map module
    :undoc-members:
    :show-inheritance:
 
-tests.test\_all module
-----------------------
+tests.test\_Database module
+---------------------------
 
-.. automodule:: tests.test_all
+.. automodule:: tests.test_Database
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_Init module
+-----------------------
+
+.. automodule:: tests.test_Init
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,5 +1,5 @@
 import sqlite3
-from utils.store import create_sugg_table, insert, countSuggestionsInDB
+from utils.store import create_sugg_table, insert, countSuggestionsInDB, getMaxID, getNameOfLastRow, deleteExtraFakeRecord  # noqa: E501
 from utils.setup import selectshopbyname, selectshops, selectshopbyid, updateshopbyname, updateshopbyservice  # noqa: E501
 
 conn = sqlite3.connect('./data/suggestedShops.db', check_same_thread=False)
@@ -14,6 +14,7 @@ def test_suggTableMade():
     c.execute('SELECT name FROM sqlite_master WHERE type = ? AND name = ?',
               ('table', 'suggestedShops',))
     result = c.fetchone()[0]
+    assert(result == "suggestedShops")
     if result == "suggestedShops":
         print("passed test 1")
     else:
@@ -26,26 +27,19 @@ def test_insertSuggestion():
     """
 
     # get ID of last record
-    c.execute('SELECT max(id) from suggestedShops')
-    x = c.fetchone()[0]
+    x = getMaxID()
     id = x+1
     # increments by 1
     # inserts new record using ID and fake inputs
     insert(id, "FakeNameRestaurantTester", "Image", "website.com",
            "fakeservice", "fakeplace", "restaurant")
-    # Gets last inserted record
-    sql_st = '''SELECT * FROM suggestedShops WHERE id = (SELECT max(id) FROM suggestedShops)''' # noqa
-    c.execute(sql_st)
-    name = c.fetchone()[1]
-    """
-    checks if name on last inserted record matches the
-    name of record that we just tried to insert
-    """
+    # Gets name from last inserted record
+    name = getNameOfLastRow()
+    assert(name == "FakeNameRestaurantTester")
     if name == "FakeNameRestaurantTester":
         print("passed test 2")
         # removes the added row after test passes
-        c.execute('DELETE FROM suggestedShops WHERE name  LIKE ?', ('%FakeNameRestaurantTester%',)) # noqa
-        conn.commit()
+        deleteExtraFakeRecord()
     else:
         print("failed test 2")
 
@@ -55,9 +49,7 @@ def test_countSugg_insert():
     """
 
     original = countSuggestionsInDB()
-
-    c.execute('SELECT max(id) from suggestedShops')
-    max_id = c.fetchone()[0]
+    max_id = getMaxID()
     id = max_id + 1
     insert(id, "FakeNameRestaurantTester", "Image", "website.com",
            "fakeservice", "fakeplace", "restaurant")
@@ -65,16 +57,13 @@ def test_countSugg_insert():
     after = countSuggestionsInDB()
 
     difference = after - original
+    assert(difference == 1)
     if difference == 1:
         print("passed test 3")
-        c.execute('DELETE FROM suggestedShops WHERE name  LIKE ?',
-                  ('%FakeNameRestaurantTester%',))
-        conn.commit()
+        deleteExtraFakeRecord()
     else:
         print("failed test 3")
-        c.execute('DELETE FROM suggestedShops WHERE name  LIKE ?',
-                  ('%FakeNameRestaurantTester%',))
-        conn.commit()
+        deleteExtraFakeRecord()
 
 
 def test_selectShopName():
