@@ -14,7 +14,7 @@ def create_table():
              TEXT TEXT,
              SERVICE TEXT,
              LOCATION TEXT,
-             lAT INT,
+             LAT INT,
              LON INT,
              TYPE TEXT);''')
     return True
@@ -62,6 +62,12 @@ def generate_list(file):
                 id += 1
 
 
+def countShopsInDB():
+    c.execute('''SELECT COUNT(*) FROM shops''')
+    num = c.fetchall()[0][0]
+    return num
+
+
 def insert(id, name, image, text, service, location, lat, lon):
     values = "INSERT INTO shops (ID, NAME, IMAGE, TEXT, SERVICE, LOCATION, LAT, LON, TYPE) \
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);"
@@ -102,29 +108,27 @@ def selectshops(borough):
     return rows
 
 
+def selectshopbyid(id):
+    c.execute('SELECT * FROM shops WHERE ID = ?', (id,))
+    row = c.fetchone()
+    return row
+
+
 def updateshopbyname(id, newname):
-    id = "%" + id + "%"
-    newterm = "%" + newname + "%"
-    c.execute('UPDATE shops SET NAME = ? WHERE ID = ?', (newterm, id,))
+    c.execute('UPDATE shops SET NAME = ? WHERE ID = ?', (newname, id,))
     conn.commit()
 
 
 def updateshopbyservice(id, service):
-    id = "%" + id + "%"
-    service = "%" + service + "%"
     c.execute('UPDATE shops SET SERVICE = ? WHERE ID = ?', (service, id,))
     conn.commit()
 
 
 def updateshopbytext(id, text):
-    id = "%" + id + "%"
-    text = "%" + text + "%"
     c.execute('UPDATE shops SET TEXT = ? WHERE ID = ?', (text, id,))
     conn.commit()
 
 
-def updateshopbyimage(id, image):
-    id = "%" + id + "%"
-    img = "%" + image + "%"
+def updateshopbyimage(id, img):
     c.execute('UPDATE shops SET IMAGE = ? WHERE ID = ?', (img, id,))
     conn.commit()

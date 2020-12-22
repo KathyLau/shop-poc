@@ -1,6 +1,6 @@
 import sqlite3
 from utils.store import create_sugg_table, insert, countSuggestionsInDB
-from utils.setup import selectshopbyname, selectshops
+from utils.setup import selectshopbyname, selectshops, selectshopbyid, updateshopbyname, updateshopbyservice  # noqa: E501
 
 conn = sqlite3.connect('./data/suggestedShops.db', check_same_thread=False)
 c = conn.cursor()
@@ -114,8 +114,44 @@ def test_selectShop():
         print("Failed test 5")
 
 
+def test_updateShopName():
+    """ Tests updateshopbyname() to see if it will change the name given id"""
+
+    id = 10
+    shop = selectshopbyid(id)
+    oldname = shop[1]
+    newname = "Smthing"
+
+    updateshopbyname(id, newname)
+
+    shop = selectshopbyid(id)
+    assert(shop[1] == newname)
+
+    updateshopbyname(id, oldname)
+
+
+def test_updateShopService():
+    """ Tests updateshopbyservice() to see if it will change
+        the service given id
+    """
+
+    id = 10
+    shop = selectshopbyid(id)
+    oldservice = shop[4]
+    newservice = "sit in only"
+
+    updateshopbyservice(id, newservice)
+
+    shop = selectshopbyid(id)
+    assert(shop[4] == newservice)
+
+    updateshopbyservice(id, oldservice)
+
+
 test_suggTableMade()
 test_insertSuggestion()
 test_countSugg_insert()
 test_selectShopName()
 test_selectShop()
+test_updateShopName()
+test_updateShopService()
