@@ -43,5 +43,5 @@ def update_user_email(id, email):
 
 
 def update_user_pass(id, password):
-    c.execute('UPDATE CUSTOMERS SET PASSWORD = ? WHERE ID = ?', (password, id,))
+    c.execute('UPDATE CUSTOMERS SET PASSWORD = ? WHERE ID = ?', (password, id,))  # noqa: E501
     conn.commit()

@@ -131,7 +131,9 @@ def test_updateShopName():
 
 
 def test_updateShopService():
-    """ Tests updateshopbyservice() to see if it will change the service given id"""
+    """ Tests updateshopbyservice() to see if it will change
+        the service given id
+    """
 
     id = 10
     shop = selectshopbyid(id)
