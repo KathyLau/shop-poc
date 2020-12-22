@@ -43,7 +43,7 @@ def search():
     returnlist.clear()
     searchlist.clear()
 
-    searchterm = request.args.get('s').capitalize()
+    searchterm = request.args.get('s').lower()
     shops = selectshops(searchterm) + selectshopbyname(searchterm)
     for shop in shops:
         searchlist.append({

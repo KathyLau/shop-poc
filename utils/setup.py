@@ -71,12 +71,14 @@ def insert(id, name, image, text, service, location, lat, lon):
 
 
 def selectshopbyname(name):
-    c.execute('SELECT * FROM shops WHERE name=?', (name,))
+    term = "%" + name + "%"
+    c.execute('SELECT * FROM shops WHERE LOWER(name) LIKE ?', (term,))
     rows = c.fetchall()
     return rows
 
 
 def selectshops(borough):
-    c.execute('SELECT * FROM shops WHERE LOCATION=?', (borough,))
+    term = "%" + borough + "%"
+    c.execute('SELECT * FROM shops WHERE LOWER(location) LIKE ?', (term,))
     rows = c.fetchall()
     return rows
