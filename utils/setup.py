@@ -7,7 +7,7 @@ c = conn.cursor()
 
 
 def create_table():
-    c.execute('''CREATE TABLE shops
+    c.execute('''CREATE TABLE IF NOT EXISTS shops
              (ID INT,
              NAME TEXT,
              IMAGE TEXT,
@@ -82,3 +82,27 @@ def selectshops(borough):
     c.execute('SELECT * FROM shops WHERE LOWER(location) LIKE ?', (term,))
     rows = c.fetchall()
     return rows
+
+def updateshopbyname(id, newname):
+    id = "%" + id + "%"
+    newterm = "%" + newname + "%"
+    c.execute('UPDATE shops SET NAME = ? WHERE ID = ?', (newterm, id,))
+    conn.commit()
+
+def updateshopbyservice(id, service):
+    id = "%" + id + "%"
+    service = "%" + service + "%"
+    c.execute('UPDATE shops SET SERVICE = ? WHERE ID = ?', (service, id,))
+    conn.commit()
+
+def updateshopbytext(id, text):
+    id = "%" + id + "%"
+    text = "%" + text + "%"
+    c.execute('UPDATE shops SET TEXT = ? WHERE ID = ?', (text, id,))
+    conn.commit()
+
+def updateshopbyimage(id, image):
+    id = "%" + id + "%"
+    img= "%" + image + "%"
+    c.execute('UPDATE shops SET IMAGE = ? WHERE ID = ?', (img, id,))
+    conn.commit()
