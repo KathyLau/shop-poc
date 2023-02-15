@@ -37,8 +37,5 @@ python app.py
 ## Example
 ![Alt text](/static/images/ss_2.png?raw=true "Optional Title")
 
-## Live app
-https://limitless-dawn-67321.herokuapp.com/
-
 ## Team Members
 Kathy Lau and Doria Chen
